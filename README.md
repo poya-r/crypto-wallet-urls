@@ -69,6 +69,15 @@ The general process of extracting wallet addresses is as follows:
 2. parse HTML to extract all `meta` tags containing `crypto:`
 3. generate a list addresses available and pick any applicable currency address 
 
+As a demonstration, I've included a Python parser under `python` folder
+It's used as follows
+```python
+from url_wallet import UrlWallet
+parser = UrlWallet()
+wallets = parser.get_wallets_from_url(<url>)
+print(wallets)
+```
+
 ### Contact
 I by no means hold any rights to this and would like to leave it to the community to develop and grow this idea.
 However I created this page as a centralized place for any discussions or feedback from the community so that we can all stay on the same page.
