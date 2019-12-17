@@ -2,6 +2,11 @@
 
 require('simple_html_dom.php');
 
+
+/**
+ * usage:
+ * $wallets = UrlWallet::processUrl(<url>);
+**/
 class UrlWallet {
 	static function getWalletsFromUrl($url)
 	{
@@ -30,5 +35,3 @@ class UrlWallet {
 		return $wallets;
 	}
 }
-
-var_dump(UrlWallet::processUrl("http://bittrail.me/p/popo"));

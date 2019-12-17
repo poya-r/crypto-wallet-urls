@@ -1,5 +1,5 @@
 # Wallet Urls for Cryptocurrencies
-This is a suggested specification to allow for URLs to be used as an alias to crypto wallets. Any feedback/suggested are welcome 
+This is a suggested specification to allow for URLs to be used as an alias to crypto wallets. 
 
 #### The Problem
 Sending and receiving crypto assets currently is a scary move for anyone not used to wallet addresses and hence is a huge roadblock to mass adoption of crypto currencies.
@@ -15,7 +15,9 @@ That address can not only hold your Bitcoin address but also your Ethereum, Ripp
 This can be done by adding `<meta />` tags inside any page's HTML header.
 Example meta tag:
 
-`<meta name="crypto:btc" content="<wallet address>" data-label="My BTC Wallet" />`
+```html
+<meta name="crypto:btc" content="<wallet address>" data-label="My BTC Wallet" />
+```
 
 #### How it works:
 As a user you would just enter `https://mywebsite.com` in the "Send To" field of your wallet app (if it supports this specification) and the wallet app will be able to automatically fetch the correct receiving wallet address from that url.
@@ -73,7 +75,7 @@ In cases of a currency having multiple symbols, you can use multiple meta tags t
 Ultimately it'll be up to the community and wallet apps to support/decide what symbols will be considered valid. See "Requirements"
 
 #### `content` attribute:
-Content attribute will hold the address itself. and should not be concatenated with any other information.
+Content attribute will hold the wallet address (public key) itself. It is case-sensitive and should not be concatenated with any other information.
 
 #### `data-<name>` attributes:
 Any extra metadata can be stored using `data-` attributes such as `data-label` to hold an optional Label for this wallet.
@@ -82,8 +84,8 @@ Again it's up to developers of supporting apps to decide what `data-` attributes
 Why `data-<name>` format? This format has been chosen in order to stay in compliance with wider HTML specifications.
 
 #### Requirements
-The adoption of this specification is ultimately dependant on wallet Apps and Websites to implement this specification. 
-Doing so will certainly give their users one more way of easily and confidently send crypto using their app and hopefully benefit their app.
+The adoption of this specification is ultimately dependant on wallet Apps and Websites to implement. 
+Doing so will certainly give their users one more way of easily and confidently send crypto using their app and so attract more users to their app.
 
 I intend to keep an up to date list of all wallet apps that have implemented this specification to make it easier for users to find them.
 
