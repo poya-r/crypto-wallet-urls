@@ -5,20 +5,19 @@ require('simple_html_dom.php');
 
 /**
  * usage:
- * $wallets = UrlWallet::processUrl(<url>);
-**/
+ * $wallets = UrlWallet::getWalletsFromUrl(<url>);
+ **/
 class UrlWallet {
 	static function getWalletsFromUrl($url)
 	{
 		$wallets = [];
-//		$html_string = self::getHtml($url);
 		$html = file_get_html($url);
 		foreach($html->find('meta') as $element) {
 			if ($element->hasAttribute('name') && $element->hasAttribute('content')) {
-				$denomination = strtolower(trim($element->getAttribute('name')));
+				$name = strtolower(trim($element->getAttribute('name')));
 				$address = trim($element->getAttribute('content'));
-				if (strpos($denomination, 'crypto:') === 0){
-					$wallet['denomination'] = trim(str_replace('crypto:', '', $denomination));
+				if (strpos($name, 'wallet:') === 0){
+					$wallet['denomination'] = trim(explode(':', $name)[1]);
 					$wallet['address'] = $address;
 
 					foreach ($element->getAllAttributes() as $attr => $value) {

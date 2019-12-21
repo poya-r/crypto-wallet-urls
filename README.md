@@ -10,17 +10,19 @@ There's been many attempts to alleviate this issue using various methods such as
 What if you could share your wallet address using a web accessible URL? What if this URL could hold not just one wallet address but many wallets for different cryptocurrencies?
 For example if I need to receive money from someone I could just give them my url such as `https://www.mywebsite.com/`
 
-That address can not only hold your Bitcoin address but also your Ethereum, Ripple or any other crypto addresses.
+Similarly, a company or online retailer can have their customers simply send payments to their website address directly.
+
+That address can not only hold a Bitcoin address but also your Ethereum, Ripple or any other crypto addresses.
 
 This can be done by adding `<meta />` tags inside any page's HTML header.
 Example meta tag:
 
 ```html
-<meta name="crypto:btc" content="<wallet address>" data-label="My BTC Wallet" />
+<meta name="wallet:btc" content="<wallet address>" data-label="My BTC Wallet" />
 ```
 
 #### How it works:
-As a user you would just enter `https://mywebsite.com` in the "Send To" field of your wallet app (if it supports this specification) and the wallet app will be able to automatically fetch the correct receiving wallet address from that url.
+As someone who is sending, you would just enter `https://mywebsite.com` in the "Send To" field of your wallet app (if it supports this specification) and the wallet app will be able to automatically fetch the correct receiving wallet address from that url.
 The app can then either input the wallet address automatically or further prompt the user to confirm.
 From the developers side of things, it is very simple to implement and has absolutely no downsides for their app. And will ultimately improve the user experience on the app.
 For more info see "For Developers".
@@ -64,12 +66,12 @@ The provided snippets are intended for reference only and might not cover all ed
 
 
 ## Specification
-As mentioned above this proposal makes the use of HTML `meta` tags and `crypto:` namespace along with attributes described below.
+As mentioned above this proposal makes the use of HTML `meta` tags and `wallet:` namespace along with attributes described below.
 The `crpto:` namespace is used to avoid collisions with other meta tags and make this specification more scalable. 
 
 #### `name` attribute: 
-For all crypto related meta tags we use the namespace `crpto:` followed by the currency's symbol such as `btc`. 
-The `name` attribute is not case-sensitive so `crypto:btc` is same as `crpto:BTC`.
+For all crypto wallet related meta tags we use the namespace `wallet:` followed by the currency's symbol such as `btc`. 
+The `name` attribute is not case-sensitive so `wallet:btc` is same as `wallet:BTC`.
 In cases of a currency having multiple symbols, you can use multiple meta tags to cover all cases such as `BTC` and `XBT` in the case of bitcoin.
 
 Ultimately it'll be up to the community and wallet apps to support/decide what symbols will be considered valid. See "Requirements"
@@ -85,12 +87,12 @@ Why `data-<name>` format? This format has been chosen in order to stay in compli
 
 #### Requirements
 The adoption of this specification is ultimately dependant on wallet Apps and Websites to implement. 
-Doing so will certainly give their users one more way of easily and confidently send crypto using their app and so attract more users to their app.
+Doing so will certainly give their users one more way of easily and confidently send crypto-currency using their app and so attract more users to their app.
 
 I intend to keep an up to date list of all wallet apps that have implemented this specification to make it easier for users to find them.
 
 #### Safety
-With crypto and online money transfer, there's always the issue of safety. This method is inherently safe because of safety of the https protocol.
+With crypto-currencies and online money transfer, there's always the issue of safety. This method is inherently safe because of safety of the https protocol.
 As long as the wallets or any api adopting this specification requests the HTML content directly from the url (not through a third party library/entity), they can be sure that the data is not tampered with.
 
 
