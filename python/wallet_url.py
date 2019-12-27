@@ -2,19 +2,19 @@ import urllib.request
 from html.parser import HTMLParser
 
 
-class UrlWallet(object):
+class WalletUrl(object):
 
     def get_wallets_from_url(self, url: str):
         try:
             html = urllib.request.urlopen(url).read()
-            reader = UrlWalletParser()
+            reader = WalletUrlParser()
             reader.feed(str(html))
             return reader.get_wallet_list()
         except:
             return dict()
 
 
-class UrlWalletParser(HTMLParser):
+class WalletUrlParser(HTMLParser):
 
     wallets = None
 

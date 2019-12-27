@@ -7,7 +7,7 @@ require('simple_html_dom.php');
  * usage:
  * $wallets = UrlWallet::getWalletsFromUrl(<url>);
  **/
-class UrlWallet {
+class WalletUrl {
 	static function getWalletsFromUrl($url)
 	{
 		$wallets = [];
