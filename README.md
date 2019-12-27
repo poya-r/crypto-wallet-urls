@@ -44,19 +44,26 @@ The general process of extracting wallet addresses is as follows:
 3. generate a list of addresses available
 4. select the desired wallet address 
 
-As a demonstration, I've included simple parsers in the `python` and `php` folders
+As a demonstration, I've included simple parsers in the `javascript`, `python` and `php` folders
+
+Javascript usage:
+```javascript
+import * as wallet_url from 'wallet_url';
+wallets = wallet_url.getWalletsFromUrl();
+console.log(wallets);
+```
 
 Python snippet usage:
 ```python
-from url_wallet import UrlWallet
-wallets = UrlWallet().get_wallets_from_url(<url>)
+from wallet_url import WalletUrl
+wallets = WalletUrl().get_wallets_from_url(<url>)
 print(wallets)
 ```
 
 PHP snippet usage:
 ```PHP
-require('UrlWallet.php');
-$wallets = UrlWallet::getWalletsFromUrl(<url>);
+require('WalletUrl.php');
+$wallets = WalletUrl::getWalletsFromUrl(<url>);
 var_dump($wallets);
 ```
 
