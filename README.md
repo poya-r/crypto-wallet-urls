@@ -18,7 +18,7 @@ This can be done by adding `<meta />` tags inside any page's HTML header.
 Example meta tag:
 
 ```html
-<meta name="wallet:btc" content="<wallet address>" data-label="My BTC Wallet" />
+<meta name="crypto:wallet:btc" content="<wallet address>" data-label="My BTC Wallet" />
 ```
 
 #### How it works:
@@ -40,7 +40,7 @@ So the sending person can simply type the url in any browser and manually grab t
 The general process of extracting wallet addresses is as follows:
 
 1. make a `GET` call to the url to retrieve HTML code
-2. parse HTML to extract all `meta` tags with `name` attribute containing `wallet:`
+2. parse HTML to extract all `meta` tags with `name` attribute containing `crypto:wallet:`
 3. generate a list of addresses available
 4. select the desired wallet address 
 
@@ -73,12 +73,12 @@ The provided snippets are intended for reference only and might not cover all ed
 
 
 ## Specification
-As mentioned above this proposal makes the use of HTML `meta` tags and `wallet:` namespace along with attributes described below.
+As mentioned above this proposal makes the use of HTML `meta` tags and `crypto:wallet:<currency_code>` namespace along with attributes described below.
 The `crpto:` namespace is used to avoid collisions with other meta tags and make this specification more scalable. 
 
 #### `name` attribute: 
-For all crypto wallet related meta tags we use the namespace `wallet:` followed by the currency's symbol such as `btc`. 
-The `name` attribute is not case-sensitive so `wallet:btc` is same as `wallet:BTC`.
+For all crypto wallet related meta tags we use the namespace `crypto:wallet:` followed by the currency's symbol such as `btc`. 
+The `name` attribute is not case-sensitive so `crypto:wallet:btc` is same as `crypto:wallet:BTC`.
 In cases of a currency having multiple symbols, you can use multiple meta tags to cover all cases such as `BTC` and `XBT` in the case of bitcoin.
 
 Ultimately it'll be up to the community and wallet apps to support/decide what symbols will be considered valid. See "Requirements"
