@@ -16,7 +16,7 @@ class WalletUrl {
 			if ($element->hasAttribute('name') && $element->hasAttribute('content')) {
 				$name = strtolower(trim($element->getAttribute('name')));
 				$address = trim($element->getAttribute('content'));
-				if (strpos($name, 'wallet:') === 0){
+				if (strpos($name, 'crypto:wallet:') === 0){
 					$wallet['denomination'] = trim(explode(':', $name)[1]);
 					$wallet['address'] = $address;
 
