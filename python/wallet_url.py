@@ -28,7 +28,7 @@ class WalletUrlParser(HTMLParser):
             denomination = None
             address = None
             for attr in attrs:
-                if str(attr[0]).lower() == "name" and str(attr[1]).lower().startswith("wallet:"):
+                if str(attr[0]).lower() == "name" and str(attr[1]).lower().startswith("crypto:wallet:"):
                     denomination = str(attr[1]).split(':')[1].strip().lower()
                 if str(attr[0]).lower() == "content":
                     address = attr[1]
