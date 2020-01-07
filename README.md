@@ -74,7 +74,7 @@ The provided snippets are intended for reference only and might not cover all ed
 
 ## Specification
 As mentioned above this proposal makes the use of HTML `meta` tags and `crypto:wallet:<currency_code>` namespace along with attributes described below.
-The `crpto:` namespace is used to avoid collisions with other meta tags and make this specification more scalable. 
+The `crypto:wallet:` namespace is used to avoid collisions with other meta tags and also to make this specification more scalable in the future by allowing other crypto properties to be represented. 
 
 #### `name` attribute: 
 For all crypto wallet related meta tags we use the namespace `crypto:wallet:` followed by the currency's symbol such as `btc`. 
