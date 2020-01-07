@@ -7,7 +7,7 @@ export function getWalletsFromUrl()
 
   for (let i = 0; i < metas.length; i++) {
     if (metas[i].getAttribute('name')
-        && metas[i].getAttribute('name').startsWith('wallet:'))
+        && metas[i].getAttribute('name').startsWith('crypto:wallet:'))
     {
       const denomination = metas[i].getAttribute('name').split(':')[1].trim().toLowerCase();
       const address = metas[i].getAttribute('content');
