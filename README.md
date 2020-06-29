@@ -46,13 +46,6 @@ The general process of extracting wallet addresses is as follows:
 
 As a demonstration, I've included simple parsers in the `javascript`, `python` and `php` folders
 
-Javascript usage:
-```javascript
-import * as wallet_url from 'wallet_url';
-wallets = wallet_url.getWalletsFromUrl('https://www.sample.com');
-console.log(wallets);
-```
-
 Python snippet usage:
 ```python
 from wallet_url import WalletUrl
@@ -65,6 +58,13 @@ PHP snippet usage:
 require('WalletUrl.php');
 $wallets = WalletUrl::getWalletsFromUrl('https://www.sample.com');
 var_dump($wallets);
+```
+
+Javascript usage:
+```javascript
+import * as wallet_url from 'wallet_url';
+wallets = wallet_url.getWalletsFromUrl();
+console.log(wallets);
 ```
 
 Note:
