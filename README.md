@@ -1,5 +1,5 @@
 # Wallet Urls for Cryptocurrencies
-This is a suggested specification to allow for URLs to be used as an alias to crypto-currency wallets. 
+Wallet Urls is a specification to allow for univeresal URLs to be used as an alias to one or multiple crypto-currency wallets. 
 
 #### The Problem
 Sending and receiving crypto assets currently is a scary move for anyone not used to wallet addresses and hence is a huge roadblock to mass adoption of crypto-currencies.
@@ -49,26 +49,26 @@ As a demonstration, I've included simple parsers in the `javascript`, `python` a
 Javascript usage:
 ```javascript
 import * as wallet_url from 'wallet_url';
-wallets = wallet_url.getWalletsFromUrl();
+wallets = wallet_url.getWalletsFromUrl('https://www.sample.com');
 console.log(wallets);
 ```
 
 Python snippet usage:
 ```python
 from wallet_url import WalletUrl
-wallets = WalletUrl().get_wallets_from_url(<url>)
+wallets = WalletUrl().get_wallets_from_url('https://www.sample.com')
 print(wallets)
 ```
 
 PHP snippet usage:
 ```PHP
 require('WalletUrl.php');
-$wallets = WalletUrl::getWalletsFromUrl(<url>);
+$wallets = WalletUrl::getWalletsFromUrl('https://www.sample.com');
 var_dump($wallets);
 ```
 
 Note:
-It is strongly recommended for you to write your own parser code. 
+It is recommended for you to write your own parser code. 
 The provided snippets are intended for reference only and might not cover all edge cases.
 
 
